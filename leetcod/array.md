@@ -2,7 +2,28 @@
 + [Reshape the Matrix](#reshape-the-matrix)
 + [Flipping an Image](#flipping-an-image)
 + [Squares of a Sorted Array](#squares-of-a-sorted-array)
++ [Move Zeroes](#move-zeroes)
 <!-----solution----->
+
+## Move Zeroes
+
+https://leetcode.com/problems/move-zeroes/
+
+```python
+def moveZeroes(self, nums: List[int]) -> None:
+.    """
+.    Do not return anything, modify nums in-place instead.
+.    """
+.    nums.sort()
+.    i = 0
+.    while i < len(nums):
+.        if nums[i] == 0:
+.            nums.append(nums[i])
+.            nums.pop(i)
+.        else:
+.            break
+.    return nums
+```
 
 ## Squares of a Sorted Array
 
