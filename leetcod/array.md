@@ -3,7 +3,27 @@
 + [Flipping an Image](#flipping-an-image)
 + [Squares of a Sorted Array](#squares-of-a-sorted-array)
 + [Move Zeroes](#move-zeroes)
++ [Transpose Matrix](#transpose-matrix)
 <!-----solution----->
+
+## Transpose Matrix
+
+https://leetcode.com/problems/transpose-matrix/
+
+```python
+def transpose(self, A: List[List[int]]) -> List[List[int]]:
+.    B = []
+.    j = 0
+.    while j < len(A[0]):
+.        i = 0
+.        new = []
+.        while i < len(A):
+.            new.append(A[i][j])
+.            i += 1
+.        B.append(new)
+.        j += 1
+.    return B
+```
 
 ## Move Zeroes
 
