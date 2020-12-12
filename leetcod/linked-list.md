@@ -1,8 +1,35 @@
-   + [Reverse Linked List](#reverse-linked-list)
+  + [Reverse Linked List](#reverse-linked-list)
 + [Middle of the Linked List](#middle-of-the-linked-list)
 + [Palindrome Linked List](#palindrome-linked-list)
 + [Merge Two Sorted Lists](#merge-two-sorted-lists)
++ [Remove Nth Node From End of List](#remove-nth-node-from-end-of-list)
 <!-----solution----->
+
+## Remove Nth Node From End of List
+
+https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+
+```python
+if (head.next is None and n == 1):
+.    return None
+.counter = 1
+.len = 0
+.len_head = head
+.while len_head:
+.    len += 1
+.    len_head = len_head.next
+.n = len-n
+.if(n == 0):
+.    return head.next
+.first = head
+.second = head.next
+.while (counter < n):
+.    first = first.next
+.    second = second.next
+.    counter += 1
+.first.next = second.next
+.return head
+```
 
 ## Merge Two Sorted Lists
 
