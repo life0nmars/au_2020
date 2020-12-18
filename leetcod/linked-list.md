@@ -1,9 +1,120 @@
-  + [Reverse Linked List](#reverse-linked-list)
+ + [Reverse Linked List](#reverse-linked-list)
 + [Middle of the Linked List](#middle-of-the-linked-list)
 + [Palindrome Linked List](#palindrome-linked-list)
 + [Merge Two Sorted Lists](#merge-two-sorted-lists)
 + [Remove Nth Node From End of List](#remove-nth-node-from-end-of-list)
++ [Linked List Cycle](#linked-list-cycle)
++ [Linked List Cycle II](#linked-list-cycle-ii)
++ [Sort List](#sort-list)
++ [Reorder List](#reorder-list)
++ [Intersection of Two Linked Lists](#intersection-of-two-linked-lists)
 <!-----solution----->
+
+## Intersection of Two Linked Lists
+
+https://leetcode.com/problems/intersection-of-two-linked-lists/
+
+```python
+def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
+     if headA is None or headB is None:
+        return None
+     a,b=headA,headB
+     while (a!=b):
+        a=headB if a==None else a.next
+        b=headA if b==None else b.next
+     return a
+```
+
+## Reorder List
+
+https://leetcode.com/problems/reorder-list/
+
+```python
+def reorderList(self, head: ListNode) -> None:
+    if head is None: return None
+    node = head
+    arr = []
+    while node:
+        arr.append(node)
+        node = node.next
+        temp = [i.val for i in arr]
+    i = 0
+    first, last = 0, len(arr) - 1
+    while first != last:
+        if(i % 2 == 0):
+            print(first)
+            arr[i].val = temp[first]
+            first += 1
+        else:
+            print(last)
+            arr[i].val = temp[last]
+            last -= 1
+        i += 1
+        arr[i].val = temp[first]
+```
+
+## Sort List
+
+https://leetcode.com/problems/sort-list/
+
+```python
+def sortList(self, head: ListNode) -> ListNode:
+    node = head
+    sorted_nods = []
+    while node:
+        sorted_nods.append(node.val)
+        node = node.next
+    sorted_nods.sort()
+    i = 0
+    node = head
+    while node:
+        node.val = sorted_nods[i]
+        node = node.next
+        i += 1
+    return head
+```
+
+## Linked List Cycle II
+
+https://leetcode.com/problems/linked-list-cycle-ii/
+
+```python
+def detectCycle(self, head: ListNode) -> ListNode:
+    slow = fast= head
+    isLoopExist = False
+    while fast and fast.next:
+        slow,fast = slow.next,fast.next.next
+        if(slow == fast):
+            isLoopExist = True
+            break
+    if isLoopExist:
+        if(slow == head):
+            return slow
+        else:
+            turtle = head
+            while slow.next != turtle.next:
+                slow = slow.next
+                turtle = turtle.next
+```
+
+## Linked List Cycle
+
+https://leetcode.com/problems/linked-list-cycle/
+
+```python
+def hasCycle(self, head: ListNode) -> bool:
+    slow = fast = head
+    isLoopExist = False
+    if head.next == None:
+        isLoopExist = False
+    else:    
+        while slow and fast:
+            slow, fast = slow.next, fast.next.next
+            if slow == fast:
+                isLoopExist = True
+                break
+    return isLoopExist
+```
 
 ## Remove Nth Node From End of List
 
