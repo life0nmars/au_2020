@@ -3,7 +3,49 @@
 + [Fibonacci Number](#fibonacci-number)
 + [Reverse Integer](#reverse-integer)
 + [Palindrome Number](#palindrome-number)
++ [Base 7](#base-7)
++ [Largest Perimeter Triangle](#largest-perimeter-triangle)
 <!-----solution----->
+
+## Largest Perimeter Triangle
+
+https://leetcode.com/problems/largest-perimeter-triangle/
+
+```python
+def largestPerimeter(self, A: List[int]) -> int:
+    A.sort()
+    for i in range(len(A) - 3, -1, -1):
+        if A[i] + A[i+1] > A[i+2]:
+            return A[i] + A[i+1] + A[i+2]
+    return 0
+```
+
+## Base 7
+
+https://leetcode.com/problems/base-7/
+
+```python
+def convertToBase7(self, num: int) -> str:
+    if num < 0:
+        num = num * (-1)
+        res = self.forPositive(num)
+        res = res * (-1)
+    else:
+        res = self.forPositive(num)
+    return str(res)
+def forPositive(self, num):
+    nums = []
+    i = 0
+    sum = 0
+    while num != 0:
+        res = num % 7
+        num = num // 7
+        nums.append(res)
+    for elem in nums:
+        sum = sum + elem*10**i
+        i += 1
+    return sum
+```
 
 ## Palindrome Number
 
