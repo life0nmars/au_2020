@@ -17,7 +17,7 @@ class leetcode_maker:
         return '+ [{}](#{})'.format(self.title, self.link[30:-1])
 
     def md_code(self):
-        return '```python\n{}\n```'.format('\n'.join(map(lambda x : x.rstrip('\n')[4:], self.code)))
+        return '```python\n{}\n```'.format('\n.'.join(map(lambda x : x.rstrip('\n')[4:], self.code)))
 
     def md_formatted(self):
         return '{}\n{}\n\n{}\n\n{}\n\n{}'.format(self.md_link(), separator, self.md_title(), self.link, self.md_code())
@@ -60,4 +60,4 @@ def main(source, destination):
 
 
 if __name__ == '__main__':
-    main(r"C:\Users\Анютка\Documents\Новая папка\Переделанное\13.08.txt", r"C:\Users\Анютка\Documents\Новая папка\Переделанное\linked-list.md")
+    main(r"изначальный текстовый файл", r"файл для записи в формате md")
