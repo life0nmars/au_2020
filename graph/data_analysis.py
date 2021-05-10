@@ -26,7 +26,7 @@ def filter_dicts(lordOfDicts, key, value):
 def sort_data(data, sort_key):
     return sorted(data, key=lambda k: datetime.strptime(k[sort_key], '%d-%m-%Y'))
 
-def get_x_and_y(data, title, key_x = "Date", key_y = "Staff"):
+def get_x_and_y(data, title, key_x = "Date", key_y = "Stuff"):
     x = []
     y = []
     for i in data:
