@@ -45,13 +45,13 @@ def main(name):
     data, headers = prepearing_of_data(data)
     lstOfDicts = make_the_dict(headers, data)
     title = input("Number of the resourse:")
-    name = input("Name of staff:")
+    name = input("Which Anya??")
     dictionary = filter_dicts(lstOfDicts, headers[0], title)
     newDictionary = filter_dicts(dictionary, headers[3], name)
     data = sort_data(newDictionary, headers[1])
     print(headers)
     title = title + " " + name
     get_x_and_y(data, title, headers[1], headers[2])
-#Поменялась только функция мэйн...наверно, это и значит быть расширяемым...
+
 if __name__ == '__main__':
-    main('input.txt')
+    main('/content/sample_data/input.txt')
