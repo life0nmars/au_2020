@@ -10,10 +10,14 @@ def open_file(file_name):
 
 
 def prepearing_of_data(data):
-    keys = data.pop(0).strip("\n").split(", ")
+    lstKeys = data.pop(0).strip("\n").split(" ")
+    strKeys = "".join(lstKeys)
+    keys = strKeys.split(',')
     sorted_data = []
     for elem in data:
-       sorted_data.append(elem.rstrip("\n").split(", "))
+        lstElem = elem.strip("\n").split(" ")
+        strElem = "".join(lstElem)
+        sorted_data.append(strElem.split(','))
     return sorted_data, keys
 
 
@@ -65,4 +69,4 @@ def main(name):
 #Если порядок не такой, надо будет изменить индексы списка headers.
 
 if __name__ == '__main__':
-    main('input.txt')
+    main(r'input.txt')
